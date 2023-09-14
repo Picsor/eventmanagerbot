@@ -5,9 +5,10 @@ This readme aims to be a simple introduction to the project and its installation
 ### What is this repository for? ###
 
 * Development / Bot Updating
-* Version 17.4.6.5[ <sprint>.<epic>.<us>.<build> ] - Rebuilt the bot to make it more stable and secure (=> swap3).
 * [Repo / Issues](https://github.com/Picsor/sypherbot/issues)
 * [Doc Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome)
+
+> Note: Adding a `components` folder to the root might be required to run the project.
 
 ### Set yourself up! ###
 
