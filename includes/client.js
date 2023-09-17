@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const guildConfig = require('../database/models/guild-config.js');
 
 const cDatabase = require('../database/database.js');
 const cIdbank = require('./idbank.js');
@@ -7,6 +8,7 @@ const cTextBank = require('./textBank.js');
 const cColorBank = require('./colorBank.js');
 const cSettings = require('./settings.js');
 const cTools = require('./tools.js');
+const cEmbedManager = require('./embed-manager.js');
 
 module.exports = class extends Client {
 	constructor(config) {
@@ -25,8 +27,23 @@ module.exports = class extends Client {
 		this.m_idBank = new cIdbank();
 		this.m_TextBank = new cTextBank(this.m_Settings.m_Language, this.m_Settings.m_Prefix);
 		this.m_ColorBank = new cColorBank();
+		this.m_EmbedManager = new cEmbedManager(this);
+
+		this.m_DynConfig = null;
     
 		this.m_Admins =  [this.GetId("Picsor")];
+	}
+
+	async LoadConfig(guildId) {
+		await guildConfig.findOne({ where: { guildId: guildId } }).then(config => {
+			this.m_DynConfig = config;
+			if(config) this.SetLanguage(config.language);
+		});
+
+	}
+
+	GetConfig() {
+		return this.m_DynConfig;
 	}
 
 	async DatabaseConnect() {

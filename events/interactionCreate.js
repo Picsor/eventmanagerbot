@@ -7,7 +7,9 @@ module.exports = {
         let client = interaction.client;
 
 		if (!interaction.isCommand() && !interaction.isButton() && interaction.type != InteractionType.ModalSubmit) return;
-
+        
+        await client.LoadConfig(interaction.guildId);
+        
         if(interaction.isCommand()) {
             const command = client.commands.get(interaction.commandName);
 

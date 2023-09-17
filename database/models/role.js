@@ -1,29 +1,29 @@
 const { DataTypes, Model } = require('sequelize');
 
-module.exports = class guildConfig extends Model {
+
+module.exports = class role extends Model {
+
     static init(sequelize)
     {
         return super.init({
-            guildId:{
+            roleId:{
                 type: DataTypes.STRING,
                 primaryKey: true
             },
-            availableEventsCategoryId:{
+            guildId:{
                 type: DataTypes.STRING,
             },
-            createdEventsCategoryId:{
+            name:{
                 type: DataTypes.STRING
             },
-            planningChannelId:{
+            emojiCode:{
                 type: DataTypes.STRING
-            },
-            language:{
-                type: DataTypes.STRING,
-                defaultValue: "en"
             }
         }, {
-            tableName: 'guildConfig',
+            tableName: 'role',
             sequelize
         })
+
+
     }
 }

@@ -6,14 +6,14 @@ module.exports = class cColorBank {
 
     init()
     {
-        this.Add("Red", "#ff5757")
-        this.Add("Danger", "#ff5757")
-        this.Add("Light_Green", "#14de51")
-        this.Add("Success", "#14de51")
-        this.Add("Yellow", "#ffd000")
-        this.Add("Orange", "#ffa200")
+        this.Add("red", "#ff5757")
+        this.Add("danger", "#ff5757")
+        this.Add("light-green", "#14de51")
+        this.Add("success", "#14de51")
+        this.Add("yellow", "#ffd000")
+        this.Add("orange", "#ffa200")
         this.Add("purple", "#6018f0")
-        this.Add("Flash_Red", "#fc0303")
+        this.Add("flash-red", "#fc0303")
         this.Add("blurple", "#454FBF")
 
         this.Add("StaffRequest", "#fc0303") //Flash_Red

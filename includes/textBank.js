@@ -1,9 +1,9 @@
 module.exports = class cTextBank {
     constructor(lang, prefix) {
         this.m_Languages = {
-            "French": 0,
-            "English": 1,
-            "Spanish": 2
+            "fr": 0,
+            "en": 1,
+            "es": 2
         }; // hey Capt'n, oui donte love Spanish !
 
         this.m_Bank = {};
@@ -147,7 +147,23 @@ module.exports = class cTextBank {
         this.Add("", ["","","errLANG"])
         this.Add("", ["","","errLANG"])
         this.Add("", ["","","errLANG"])
-        this.Add("", ["","","errLANG"])
+        
+        //Setup
+        this.Add("setupEventCreateCategory", ["Séléctionnez la catégorie de création d'évènement, ce sera utilisé pour l'affichage des évènements en attente de publication.","Select the event creation category. It will be used to display event that are awaiting to be published.", "Selecciona la categoria de creación de eventos. Se usará para mostrar los eventos que están esperando ser publicados."]);
+        this.Add("setupEventCreateCategoryPlaceholder", ["Catégorie de création d'évènement","Event creation category","Categoria de creación de eventos"]);
+        this.Add("setupEventAvailableCategory", ["Séléctionnez la catégorie d'évènement disponible, ce sera utilisé pour l'affichage des évènements publiés.","Select the available event category. It will be used to display available events.", "Selecciona la categoria de eventos disponibles. Se usará para mostrar los eventos disponibles."]);
+        this.Add("setupEventAvailableCategoryPlaceholder", ["Catégorie d'évènement disponible","Available event category","Categoria de eventos disponibles"]);
+        this.Add("setupLang", ["Séléctionnez la langue du bot.","Select the bot language.","Selecciona el idioma del bot."]);
+        this.Add("setupLangSelectPlaceholder", ["Langue","Language","Idioma"]);
+
+        this.Add("setupCompleteMsg1", ["Configuration terminée ! Les salons suivants seront utilisés.\n\nCatégorie de création d'évènement: <#","Setup complete! The following channels will be used.\n\nEvent creation category: <#","Configuración completa! Los siguientes canales se utilizarán.\n\nCategoría de creación de eventos: <#"]);
+        this.Add("setupCompleteMsg2", [">\nSalon de planification: <#",">\nEvent planning channel: <#",">\nSalón de planificación: <#"]);
+        this.Add("setupCompleteMsg3", [">\nCatégorie d'évènement disponible: <#",">\nEvent available category: <#",">\nCategoria de eventos disponibles: <#"]);
+        this.Add("setupCompleteMsg4", [">\nLangue: ",">\nLanguage: ",">\nIdioma: "]);
+        
+        this.Add("setupPreviousConfCompleteMsg1", ["Voici votre configuration précédente, elle sera remplacée par celle qui suit.\n\nCatégorie de création d'évènement: <#","Here is your previous configuration, it will be replaced by the following one.\n\nEvent creation category: <#","Aquí está su configuración anterior, será reemplazada.\n\nCategoría de creación de eventos: <#"]);
+
+        this.Add("setupNotDone", ["Votre serveur n'est pas configuré, veuillez lancer la commande `/setup` pour le configurer.","Your server is not configured, please run `/setup` to configure it.","Tu servidor no está configurado, por favor ejecuta `/setup` para configurarlo."]);
 
 
 		//Event Settings
