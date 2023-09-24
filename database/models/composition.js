@@ -4,7 +4,7 @@ module.exports = class composition extends Model {
     static init(sequelize)
     {
         return super.init({
-            compositionId:{
+            id:{
                 type: DataTypes.STRING,
                 primaryKey: true
             },

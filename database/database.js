@@ -29,9 +29,9 @@ module.exports = class cDatabase {
                 await this.Connection(composition);
                 await this.Connection(compositionRole);
 
-                role.belongsToMany(composition, { through: compositionRole })
-                composition.belongsToMany(role, { through: compositionRole })
-                //role.belongsToMany(composition, { foreignKey: 'roleId', through: compositionRole, as: 'roles' })
+                // role.belongsToMany(composition, { through: compositionRole })
+                // composition.belongsToMany(role, { through: compositionRole })
+                // //role.belongsToMany(composition, { foreignKey: 'roleId', through: compositionRole, as: 'roles' })
 
 
                 console.log('Bot: Online');

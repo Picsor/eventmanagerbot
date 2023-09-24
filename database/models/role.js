@@ -6,7 +6,7 @@ module.exports = class role extends Model {
     static init(sequelize)
     {
         return super.init({
-            roleId:{
+            id:{
                 type: DataTypes.STRING,
                 primaryKey: true
             },
@@ -15,6 +15,9 @@ module.exports = class role extends Model {
             },
             name:{
                 type: DataTypes.STRING
+            },
+            desc:{
+                type: DataTypes.TEXT
             },
             emojiCode:{
                 type: DataTypes.STRING

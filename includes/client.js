@@ -10,6 +10,9 @@ const cSettings = require('./settings.js');
 const cTools = require('./tools.js');
 const cEmbedManager = require('./embed-manager.js');
 
+const CompositionService = require('./services/composition-service.js');
+const RoleService = require('./services/role-service.js');
+
 module.exports = class extends Client {
 	constructor(config) {
 		super({
@@ -30,8 +33,12 @@ module.exports = class extends Client {
 		this.m_EmbedManager = new cEmbedManager(this);
 
 		this.m_DynConfig = null;
-    
 		this.m_Admins =  [this.GetId("Picsor")];
+		
+
+
+		this.CompositionService = new CompositionService();
+		this.RoleService = new RoleService();
 	}
 
 	async LoadConfig(guildId) {
@@ -73,7 +80,8 @@ module.exports = class extends Client {
 
 	MakeId(length, type) 
 	{
-		let result           = `${this.m_Settings.m_BotVersion}`.replace(/\./g, '');
+		//let result           = `${this.m_Settings.m_BotVersion}`.replace(/\./g, '');
+		let result 			 = ""
 		let characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
 		if( type == "int" )
 			characters = '0123456789';

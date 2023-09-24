@@ -165,6 +165,15 @@ module.exports = class cTextBank {
 
         this.Add("setupNotDone", ["Votre serveur n'est pas configuré, veuillez lancer la commande `/setup` pour le configurer.","Your server is not configured, please run `/setup` to configure it.","Tu servidor no está configurado, por favor ejecuta `/setup` para configurarlo."]);
 
+        // Create Role
+        this.Add("msgCreateRoleSuccess", ["Le rôle a été créé avec succès.", "The role has been successfully created.", "El rol se ha creado correctamente."]);
+        this.Add("msgCreateRoleError", ["Une erreur est survenue lors de la création du rôle.", "An error occurred while creating the role.", "Se ha producido un error al crear el rol."]);
+        this.Add("msgCreateRoleInvalidEmoji", ["L'emoji n'est pas valide.", "The emoji is not valid.", "El emoji no es válido."]);
+        this.Add("msgCreateRoleInvalidNameLength", ["Le nom du rôle est trop long.", "The role name is too long.", "El nombre del rol es demasiado largo."]);
+        this.Add("msgCreateRoleInvalidDescLength", ["La description du rôle est trop longue.", "The role description is too long.", "La descripción del rol es demasiado larga."]);
+        
+
+
 
 		//Event Settings
 		this.Add("msgEventCurrentSettings", ["Voici les paramètres actuellement sauvegardé pour votre événement :", "These are the current saved settings for your event:", "errLANG"])

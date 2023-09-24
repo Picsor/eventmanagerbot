@@ -47,7 +47,6 @@ module.exports = {
 		const collector = catResponse.createMessageComponentCollector({ componentType: ComponentType.ChannelSelect, time: 30000 });
 		const langCollector = catResponse.createMessageComponentCollector({ componentType: ComponentType.StringSelect, time: 30000 });
 		
-		let end = false;
 		let config = {
 			guildId: interaction.guildId.toString(),
 			createdEventsCategoryId: "",
@@ -66,7 +65,6 @@ module.exports = {
 				select.setCustomId("setEventPublishCat")
 				
 				await i.reply({ content: client.GetText("setupEventAvailableCategory"), components: [row], ephemeral: true });
-				end = true;
 			} 
 
 			if(i.customId == "setEventPublishCat") {
@@ -102,19 +100,19 @@ module.exports = {
 									.setDescription(client.GetText("setupCompleteMsg1")+config.createdEventsCategoryId+client.GetText("setupCompleteMsg2")+config.planningChannelId+client.GetText("setupCompleteMsg3")+config.availableEventsCategoryId+client.GetText("setupCompleteMsg4")+config.language)
 									.setColor(client.GetColor("blurple"));
 			
-			const previousConfigReviewEmbed = new EmbedBuilder()
-									.setDescription(client.GetText("setupPreviousConfCompleteMsg1")+clientConfig.createdEventsCategoryId+client.GetText("setupCompleteMsg2")+clientConfig.planningChannelId+client.GetText("setupCompleteMsg3")+clientConfig.availableEventsCategoryId+client.GetText("setupCompleteMsg4")+clientConfig.language)
-									.setColor(client.GetColor("red"));
+
 
 			if(clientConfig) {
+				const previousConfigReviewEmbed = new EmbedBuilder()
+				.setDescription(client.GetText("setupPreviousConfCompleteMsg1")+clientConfig.createdEventsCategoryId+client.GetText("setupCompleteMsg2")+clientConfig.planningChannelId+client.GetText("setupCompleteMsg3")+clientConfig.availableEventsCategoryId+client.GetText("setupCompleteMsg4")+clientConfig.language)
+				.setColor(client.GetColor("red"));
+				
 				await guildConfig.update(config, { where: { guildId: interaction.guildId.toString() } });
 				await i.reply({ephemeral: true, embeds: [previousConfigReviewEmbed, configReviewEmbed] });
 			} else {
 				await guildConfig.create(config);
 				await i.reply({ephemeral: true, embeds: [configReviewEmbed] });
 			}
-			
-			// Change behavior if config already exists (save instead of create)
 
 			langCollector.stop();
 		});
