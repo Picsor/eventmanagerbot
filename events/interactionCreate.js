@@ -6,12 +6,17 @@ module.exports = {
 	async execute(interaction) {
         let client = interaction.client;
 
+
 		if (!interaction.isCommand() && !interaction.isButton() && interaction.type != InteractionType.ModalSubmit) return;
         
         await client.LoadConfig(interaction.guildId);
         
         if(interaction.isCommand()) {
             const command = client.commands.get(interaction.commandName);
+
+            
+            // Check if interaction member is Picsor or not
+            if (interaction.member.id != "108325248365010944") return interaction.reply({content: "Access denied. Code: 401", ephemeral: true});
 
             if (!command) return;
         

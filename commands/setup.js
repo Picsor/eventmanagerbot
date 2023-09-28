@@ -76,24 +76,31 @@ module.exports = {
 			}
 		});
 
+		let createChannelErr = null;
+
 		langCollector.on('collect', async i => {
 			if(i.customId != "setLang") return;
 
 			//Step 3
 			config.language = i.values[0];
 			client.SetLanguage(config.language);
-			let newChannel = await i.guild.channels.create({
-				name: "🫧︱planning",
-				type: ChannelType.GuildText,
-				parent: config.availableEventsCategoryId,
-				permissionOverwrites: [
-					{
-						id: i.guild.roles.everyone.id,
-						deny: [PermissionsBitField.Flags.SendMessages]
-					}
-				]
-			});
-			config.planningChannelId = newChannel.id;
+			try {
+				let newChannel = await i.guild.channels.create({
+					name: "🫧︱planning",
+					type: ChannelType.GuildText,
+					parent: config.availableEventsCategoryId,
+					permissionOverwrites: [
+						{
+							id: i.guild.roles.everyone.id,
+							deny: [PermissionsBitField.Flags.SendMessages]
+						}
+					]
+				});
+
+				config.planningChannelId = newChannel.id;
+			} catch {
+				createChannelErr = client.GetText("setupCreateChannelError");
+			}
 
 
 			const configReviewEmbed = new EmbedBuilder()

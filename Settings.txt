@@ -1,1 +1,1 @@
-{"m_Language":"en","m_BotVersion":"0.0.0","m_LogChanId":"800012813887602738","m_Prefix":"-","m_EventChanId":"810881326848540682","m_InitWallet":100}
+{"m_Language":"fr","m_BotVersion":"0.0.0","m_LogChanId":"800012813887602738","m_Prefix":"-","m_EventChanId":"810881326848540682","m_InitWallet":100}

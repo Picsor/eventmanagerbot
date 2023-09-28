@@ -42,10 +42,14 @@ module.exports = class extends Client {
 	}
 
 	async LoadConfig(guildId) {
-		await guildConfig.findOne({ where: { guildId: guildId } }).then(config => {
-			this.m_DynConfig = config;
-			if(config) this.SetLanguage(config.language);
-		});
+		try {
+			await guildConfig.findOne({ where: { guildId: guildId } }).then(config => {
+				this.m_DynConfig = config;
+				if(config) this.SetLanguage(config.language);
+			});
+		} catch (e) {
+			this.m_DynConfig = null;
+		}
 
 	}
 

@@ -163,6 +163,8 @@ module.exports = class cTextBank {
         
         this.Add("setupPreviousConfCompleteMsg1", ["Voici votre configuration précédente, elle sera remplacée par celle qui suit.\n\nCatégorie de création d'évènement: <#","Here is your previous configuration, it will be replaced by the following one.\n\nEvent creation category: <#","Aquí está su configuración anterior, será reemplazada.\n\nCategoría de creación de eventos: <#"]);
 
+        this.Add("setupCreateChannelError", ["Création du salon impossible, vérifiez que le bot a les permissions nécessaires.","Channel creation failed, please verify that the bot has the required permissions.","No se pudo crear el canal, verifique que el bot tenga los permisos necesarios."]);
+
         this.Add("setupNotDone", ["Votre serveur n'est pas configuré, veuillez lancer la commande `/setup` pour le configurer.","Your server is not configured, please run `/setup` to configure it.","Tu servidor no está configurado, por favor ejecuta `/setup` para configurarlo."]);
 
         // Create Role
@@ -172,8 +174,12 @@ module.exports = class cTextBank {
         this.Add("msgCreateRoleInvalidNameLength", ["Le nom du rôle est trop long.", "The role name is too long.", "El nombre del rol es demasiado largo."]);
         this.Add("msgCreateRoleInvalidDescLength", ["La description du rôle est trop longue.", "The role description is too long.", "La descripción del rol es demasiado larga."]);
         
-
-
+        // Add HTCM Role
+        this.Add("msgAddHTCMRoleSuccess", ["Vous êtes maintenant enregistré pour la suite de l'organisation du static.", "You are now registered for the rest of the static organization.", "Ahora estás registrado para el resto de la organización estática."]);
+        this.Add("msgAddHTCMRoleError", ["Vous êtes déjà enregistré sur ce static.", "You are already registered on this static.", "Ya estás registrado en esta estática."]);
+        this.Add("postInfoMessageAddHTCMRole", ["Cliquez sur le bouton ci-dessous pour vous inscrire au static.", "Click on the button below to register for the static.", "Haz clic en el botón de abajo para registrarte en la estática."]);
+        this.Add("postInfoButtonLabelAddHTCMRole", ["S'inscrire", "Register", "Registrarse"]);
+        this.Add("msgTitleAddHTCMRole", ["Inscription - Static", "Registration - Static", "Registro - Estática"]);
 
 		//Event Settings
 		this.Add("msgEventCurrentSettings", ["Voici les paramètres actuellement sauvegardé pour votre événement :", "These are the current saved settings for your event:", "errLANG"])
