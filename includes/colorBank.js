@@ -15,6 +15,7 @@ module.exports = class cColorBank {
         this.Add("purple", "#6018f0")
         this.Add("flash-red", "#fc0303")
         this.Add("blurple", "#454FBF")
+        this.Add("soft-purple", "#6817ff")
 
         this.Add("StaffRequest", "#fc0303") //Flash_Red
         this.Add("Event", "#fc0303") //Flash_Red

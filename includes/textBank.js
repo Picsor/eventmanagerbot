@@ -640,6 +640,9 @@ module.exports = class cTextBank {
         this.Add("postInfos_rule8", ["##RULES##", "Although you have to respect those rules, keep in mind that they are enforced according to their spirit and not their words. Although we may still take action if something you do is not explicitly wrote in the rules, this also means that in some situations, we may not strictly apply the rules.", "errLANG"]);
         this.Add("postInfos_rule9", ["##RULES##", "Do not fill empty or inapropriate application forms in our recruitment process. Doing so will result in a ban.", "errLANG"]);
         
+        // ## General outputs ##
+        this.Add("msgGlobalSuccess", ["Action complétée.", "Action completed successfully.", "errLANG"])
+        this.Add("msgGlobalError", ["Action interrompue.", "Action could not complete.", "errLANG"])
 
         //### postInfos:Social ###
         this.Add("postInfos_social", ["##SOCIAL##", "You'll find all our social media accounts below. Most of our content happens here on discord or on our website.\n\n\ Joining our social media and sharing our content is completely optional but we appreciate any kind help throughout the development of the platform.\n\n If you would like to know more about our projects and developpement please visit our website by clicking the button.", "errLANG"])

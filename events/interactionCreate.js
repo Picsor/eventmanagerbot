@@ -16,7 +16,7 @@ module.exports = {
 
             
             // Check if interaction member is Picsor or not
-            if (interaction.member.id != "108325248365010944") return interaction.reply({content: "Access denied. Code: 401", ephemeral: true});
+            // if (interaction.member.id != "108325248365010944") return interaction.reply({content: "Access denied. Code: 401", ephemeral: true});
 
             if (!command) return;
         
