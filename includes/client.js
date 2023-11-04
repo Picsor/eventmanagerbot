@@ -20,10 +20,10 @@ module.exports = class extends Client {
 			partials: [Partials.Channel, Partials.User, Partials.Message, Partials.GuildMember, Partials.ThreadMember]
 		});
 
-        this.m_SettingsFilename = "./Settings.txt";
+		this.m_SettingsFilename = "./Settings.txt";
 
 		this.m_Settings = this.LoadSettings();
-		
+
 		this.queue = new Map();
 		this.m_Db = new cDatabase();
 		this.m_Tools = new cTools(this);
@@ -34,8 +34,6 @@ module.exports = class extends Client {
 
 		this.m_DynConfig = null;
 		this.m_Admins =  [this.GetId("Picsor")];
-		
-
 
 		this.CompositionService = new CompositionService();
 		this.RoleService = new RoleService();

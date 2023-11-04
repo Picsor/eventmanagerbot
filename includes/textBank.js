@@ -643,6 +643,10 @@ module.exports = class cTextBank {
         // ## General outputs ##
         this.Add("msgGlobalSuccess", ["Action complétée.", "Action completed successfully.", "errLANG"])
         this.Add("msgGlobalError", ["Action interrompue.", "Action could not complete.", "errLANG"])
+        
+
+        // ## Role Assignation error ##
+        this.Add("msgRoleAlreadyAssignedError", ["Vous avez déjà ce rôle.", "You already have this role.", "errLANG"])
 
         //### postInfos:Social ###
         this.Add("postInfos_social", ["##SOCIAL##", "You'll find all our social media accounts below. Most of our content happens here on discord or on our website.\n\n\ Joining our social media and sharing our content is completely optional but we appreciate any kind help throughout the development of the platform.\n\n If you would like to know more about our projects and developpement please visit our website by clicking the button.", "errLANG"])

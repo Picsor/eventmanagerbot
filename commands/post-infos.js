@@ -39,10 +39,12 @@ module.exports = {
                     > Nous vous amènerons le détail lorsque ce sera en place.\n\
                     \n\
                     ")
+                
+
 
                 const ngInfoButton = new ActionRowBuilder()
                                 .addComponents(new ButtonBuilder()
-                                    .setStyle(ButtonStyle.Success)
+                                    .setStyle(ButtonStyle.Primary)
                                     .setLabel("J'accepte et rentre au qG")
                                     .setCustomId("ngInfoButtonAccept")
                                 )

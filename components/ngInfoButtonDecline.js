@@ -12,7 +12,7 @@ name: 'ngInfoButtonDecline',
             .setColor(client.GetColor("light-green"));
 
         const embedError = new EmbedBuilder()
-            .setDescription(client.GetText("msgGlobalError"))
+            .setDescription(client.GetText("msgRoleAlreadyAssignedError"))
             .setColor(client.GetColor("red"));
 
         if (member.roles.cache.some(role => role.name === 'Quixotic Gambler')) 
