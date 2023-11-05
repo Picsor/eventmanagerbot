@@ -20,6 +20,13 @@ module.exports = class event extends Model {
             description:{
                 type: DataTypes.TEXT
             },
+            date:{
+                type: DataTypes.DATE
+            },
+            
+            duration:{
+                type: DataTypes.INTEGER
+            },
             channelId:{
                 type: DataTypes.STRING
             },

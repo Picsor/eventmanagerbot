@@ -18,4 +18,8 @@ module.exports = class RoleService {
         return await roles.findOne({where: {name: roleName}});
     }
 
+    async getRolesByGuildId(guildId) {
+        return await roles.findAll({where: {guildId: guildId}});
+    }
+
 }

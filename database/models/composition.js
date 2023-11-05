@@ -13,7 +13,10 @@ module.exports = class composition extends Model {
             },
             name:{
                 type: DataTypes.STRING
-            }
+            },
+            size:{
+                type: DataTypes.INTEGER
+            },
         }, {
             tableName: 'composition',
             sequelize

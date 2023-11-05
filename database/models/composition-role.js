@@ -10,6 +10,10 @@ module.exports = class CompositionRole extends Model {
             roleId: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            amount: {
+                type: DataTypes.INTEGER,
+                allowNull: false
             }
         }, {
             tableName: 'compositionRole',
