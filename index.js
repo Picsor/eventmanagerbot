@@ -2,7 +2,12 @@ const fs = require('fs');
 
 const Client = require('./includes/client.js');
 const { Collection } = require('discord.js');
-const { token } = require('./config.json');
+//const { token } = require('./config.json');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const token = process.env.TOKEN;
+
 const tools = require('./includes/tools.js');
 
 const client = new Client();

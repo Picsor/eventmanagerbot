@@ -1,7 +1,16 @@
 const { Sequelize } = require('sequelize');
 
 
-const { db_name, db_user, db_pass, db_host } = require('../config.json');
+//const { db_name, db_user, db_pass, db_host } = require('../config.json');
+
+const dotenv = require('dotenv');
+dotenv.config();
+
+const db_name = process.env.DB_NAME;
+const db_user = process.env.DB_USER;
+const db_pass = process.env.DB_PASS;
+const db_host = process.env.DB_HOST;
+
 const guildConfig = require('./models/guild-config');
 const event = require('./models/event');
 const role = require('./models/role');
