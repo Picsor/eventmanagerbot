@@ -16,6 +16,7 @@ module.exports = {
 
         let guildRoleList = await RoleService.getRolesByGuildId(interaction.guildId);
 
+        if(guildRoleList.length == 0) return interaction.reply({content: client.GetText("msgNoRoles"), ephemeral: true});
 
         let msgEmbed = new EmbedBuilder()
             .setTitle(client.GetText("msgCreateCompositionTitle"))
@@ -67,7 +68,7 @@ module.exports = {
                 let secondButtonRow = new ActionRowBuilder()
 
                 for(let i = 1; i <= 10; i++) {
-                    row = buttonRow;
+                    let row = buttonRow;
 
                     if( i > 5) row = secondButtonRow;
 

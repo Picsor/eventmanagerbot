@@ -582,6 +582,9 @@ module.exports = class cTextBank {
         this.Add("cmdDesc_", ["","","errLANG"]);
 
 
+        // ## Rules msg welcome
+        this.Add("postInfoMessageAddHTCMRole", ["MESSAGE SUR LE ROLES ", " ", ""])
+
         //CommandBoard
         this.Add("cmdBoard_FieldName", ["Nom : ","Name:","errLANG"]);
         this.Add("cmdBoard_FieldCommand", ["Commande : ","Command:","errLANG"]);

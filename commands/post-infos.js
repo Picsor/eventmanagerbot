@@ -39,8 +39,6 @@ module.exports = {
                     > Nous vous amènerons le détail lorsque ce sera en place.\n\
                     \n\
                     ")
-                
-
 
                 const ngInfoButton = new ActionRowBuilder()
                                 .addComponents(new ButtonBuilder()
